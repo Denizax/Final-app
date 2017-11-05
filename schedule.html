@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal Scheduler</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+
+</head>
+
+
+<body>
+<div class="navigation">
+    <ul id="categories-container"></ul>
+</div>
+<div class="input" id="schedule_cont">
+    <label> When do you want to<br> cook this meal?</label> <br>
+
+    <input type="date" name="schedule_date" id="schedule_date"/> <br>
+    <input type="time" name="schedule_time" id="schedule_time"/>
+    <br>
+    <button id="schedule_btn">SCHEDULE THE MEAL!</button>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        var data = $.getJSON("js/data.json", function (json) {
+
+            $.each(json, function (index, item) {
+
+                $("#categories-container").append(
+                    "<li><a id='nav-link" + item.id + "' href='category.html?id=" + item.id + "'>" + item.name + "</a></li>");
+
+                item.meals.forEach(function (meal, index) {
+
+                    if (meal.id == getUrlValue('id')) {
+
+                        document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+                        function onDeviceReady() {
+
+
+                            $("#schedule_btn").click(function (e) {
+                                e.preventDefault();
+                                var schedule_time = new Date($("#schedule_date").val() + " " + $("#schedule_time").val());
+
+
+                                //var now = new Date().getTime(),
+                                //    lnt = new Date(now + 15 * 1000);
+
+                                cordova.plugins.notification.local.schedule({
+                                    id: meal.id,
+                                    title: "Cook this",
+                                    firstAt: schedule_time,
+                                    message: "Reminder to cook " + meal.name
+                                    
+                                });
+
+                                $("#schedule_cont").delay(800).html("<h2>Your meal has been scheduled.</h2>");
+
+
+                                setTimeout(function () {
+                                    window.location.href = "index.html";
+                                }, 3000);
+
+
+                            });
+
+                        }
+
+
+                    }
+
+                });
+
+
+            });
+
+        });
+
+
+    });
+
+</script>
+</body>
+
+
+</html>
