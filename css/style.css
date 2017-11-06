@@ -11,12 +11,27 @@
 }
 
 
-
+.gradient{
+    width: 400px;
+    height: 320px;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(255, 204, 204)), color-stop(100%,rgba(255, 204, 204))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 204, 204) 50%,rgba(255, 204, 204) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgb(255, 153, 153) 0%,rgb(255, 102, 102) 100%); /* W3C */
+  position:absolute;
+  top:0px;
+  height:800px;
+  z-index:-1;
+  
+}
     body {
         background-color:#ff6666;
         margin: 0;
         padding: 0;
         width:320px;
+        
         
 }
     
@@ -24,6 +39,7 @@
         
         width:200px;
         animation: logoAnimation 1.5s 1s 1;
+        
         
     }
     
@@ -48,6 +64,7 @@
         margin: auto;
         text-align:center;
         font-family: 'Roboto';
+        
         
         
 
@@ -169,6 +186,7 @@
        font-family: 'Roboto';
   
     }
+
 
 
 
