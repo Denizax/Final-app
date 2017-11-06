@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
 
 @font-face{ 
@@ -9,6 +9,8 @@
       url('font/WebFont.ttf') format('truetype'),
       url('font/WebFont.svg#webfont') format('svg');
 }
+
+
 
     body {
         background-color:#ff6666;
@@ -64,6 +66,7 @@
         display: inline-block;
         padding: 10px;
         color: white;
+        font-family: 'Roboto';
         
         
         
@@ -104,27 +107,34 @@
         color: white;
         font-size: 25px;
         position: relative;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto';
     }
 
     .container a {
         color: #33cccc;
         padding-top: 20px;
+        font-family: 'Roboto';
         
     }
+
+
 
     .input {
         position: relative;
         top: 130px;
-        font-family: 'Roboto', sans-serif;
-        
+        font-family: 'Roboto';
         text-align: center;
 
     }
 
+
+
+
+
     label {
         color: white;
-        font-size:35px;
+        font-size:25px;
+        font-family: 'Roboto';
         
 
     }
@@ -132,24 +142,33 @@
     input {
         margin-top: 50px;
         font-size: 20px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto';
         color: #33cccc;
         border: 2px solid red;
         border-radius: 4px;
+        font-family: 'Roboto';
 
     }
 
     #schedule_btn {
         margin-top: 60px;
-        width: 250px;
+        width: 150px;
         height: 50px;
         font-size: 20px;
-        font-family: 'Roboto', sans-serif;
+        
         color: white;
         background-color: #33cccc;
 
     }
 
+   #schedule_cont{
+       position:relative;
+       width:300px;
+       left:30px;
+       top:70px;
+       font-family: 'Roboto';
+  
+    }
 
 
 
