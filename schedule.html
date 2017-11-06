@@ -13,18 +13,22 @@
 
 
 <body>
+    
+    
+   
 <div class="navigation">
     <ul id="categories-container"></ul>
 </div>
-<div class="input" id="schedule_cont">
+<div class="input" id="schedule_cont" style='font-family: Roboto;font-weight: bold;'>
     <label> When do you want to<br> cook this meal?</label> <br>
 
     <input type="date" name="schedule_date" id="schedule_date"/> <br>
     <input type="time" name="schedule_time" id="schedule_time"/>
     <br>
-    <button id="schedule_btn">SCHEDULE THE MEAL!</button>
+    <button id="schedule_btn">SCHEDULE</button>
 </div>
-
+    
+   
 <script>
 
     $(document).ready(function () {
@@ -34,7 +38,7 @@
             $.each(json, function (index, item) {
 
                 $("#categories-container").append(
-                    "<li><a id='nav-link" + item.id + "' href='category.html?id=" + item.id + "'>" + item.name + "</a></li>");
+                    "<li><a id='nav-link" + item.id + "' href='category.html?id=" + item.id + "' style='font-family: Roboto;font-weight: bold;'>" + item.name + "</a></li>");
 
                 item.meals.forEach(function (meal, index) {
 
